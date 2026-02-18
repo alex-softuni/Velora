@@ -1,0 +1,91 @@
+:root{
+  --glass: rgba(255,255,255,0.06);
+  --muted:#27475f;
+  --white:#f7fbff;
+  --accent-start:#7fd7ff;
+  --accent-end:#7c9bff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;
+  color:var(--white);
+  background:linear-gradient(180deg, rgba(11,59,90,0.95) 0%, rgba(234,246,251,0.75) 55%, rgba(255,255,255,0.9) 100%);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+
+/* Winter background with snow */
+.winter-bg{position:fixed;inset:0;z-index:-2;background:linear-gradient(180deg, rgba(11,59,90,0.95) 0%, rgba(234,246,251,0.75) 55%, rgba(255,255,255,0.9) 100%);opacity:0.98}
+.winter-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(234,246,251,0.28), rgba(255,255,255,0.5));mix-blend-mode:overlay}
+
+.snow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.flake{position:absolute;top:-8%;width:var(--s,8px);height:var(--s,8px);background:rgba(255,255,255,0.95);border-radius:50%;filter:blur(0.6px);opacity:0.95;left:var(--left);animation:fall var(--d,12s) linear infinite, sway calc(var(--d,12s) / 3) ease-in-out infinite}
+
+@keyframes fall{0%{transform:translateY(-10vh) translateX(0) scale(1);opacity:0}10%{opacity:0.9}100%{transform:translateY(110vh) translateX(30px) scale(1);opacity:0.95}}
+@keyframes sway{0%{transform:translateX(0)}50%{transform:translateX(12px)}100%{transform:translateX(0)}}
+
+/* Top-right logo */
+.top-logo{position:fixed;top:20px;right:28px;z-index:60;font-weight:900;font-size:34px;line-height:1;letter-spacing:0.6px;padding:6px 10px;border-radius:8px;background:linear-gradient(90deg,#cfeeff 0%, #ffffff 60%);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 18px rgba(6,30,50,0.18);animation:logoShimmer 6s linear infinite}
+.top-logo::after{content:'';position:absolute;right:18px;top:48%;width:72%;height:22%;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0));transform:skewY(-12deg);filter:blur(1px);opacity:0.95;border-radius:2px}
+@keyframes logoShimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* Sidebar */
+.sidebar{position:fixed;left:20px;top:20px;bottom:20px;width:220px;background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(245,252,255,0.9));border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(12,18,24,0.06);border:1px solid rgba(10,30,50,0.04);z-index:50}
+.sidebar-profile{display:flex;flex-direction:column;align-items:center;margin-top:0}
+.sidebar .avatar-large{width:86px;height:86px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,0.6);box-shadow:0 6px 18px rgba(100,140,200,0.08)}
+.sidebar .user-name{margin-top:10px;text-align:center;font-size:16px;color:#0b2740}
+.sidebar .user-email{font-size:12px;color:var(--muted);margin-top:4px}
+
+.sidebar-nav{display:flex;flex-direction:column;margin-top:18px;gap:8px}
+.nav-item{display:block;padding:12px 14px;border-radius:10px;color:#07364f;text-decoration:none;font-weight:700;border-left:3px solid transparent;transition:transform .18s, background .18s, box-shadow .18s, border-color .18s, color .18s;background:linear-gradient(90deg, rgba(11,59,90,0.04), rgba(255,255,255,0.85))}
+.nav-item:hover{background:linear-gradient(90deg, rgba(11,59,90,0.12), rgba(234,246,251,0.95));transform:translateX(8px);box-shadow:0 10px 30px rgba(9,50,85,0.06);border-left-color:rgba(11,59,90,0.6);color:#052b3a}
+.nav-item.active{background:linear-gradient(90deg,#0b3b5a 0%, #eaf6fb 100%);color:#ffffff;border-left-color:#0b3b5a;box-shadow:0 12px 30px rgba(11,59,90,0.12)}
+
+/* Main content */
+.main-content{margin-left:260px;flex:1;padding:36px;display:flex;flex-direction:column}
+.page-header{margin-bottom:24px}
+.page-header h1{margin:0;font-size:28px;color:#0b2740}
+.subtitle{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+/* Wallets grid */
+.wallets-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));gap:20px;max-width:1000px}
+
+/* Wallet card */
+.wallet-card{background:rgba(255,255,255,0.88);padding:24px;border-radius:14px;border:1px solid rgba(10,30,50,0.04);box-shadow:0 10px 30px rgba(20,60,100,0.04);backdrop-filter:blur(6px);transition:transform .18s, box-shadow .18s}
+.wallet-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(20,60,100,0.08)}
+
+.current-wallet{background:linear-gradient(135deg, rgba(207,238,255,0.95) 0%, rgba(255,255,255,0.95) 100%)}
+.wallet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.wallet-title{font-weight:700;color:#0b2740;font-size:14px;text-transform:uppercase;letter-spacing:0.5px}
+.wallet-currency{background:linear-gradient(90deg,#0b3b5a,#eaf6fb);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700;font-size:16px}
+
+.wallet-balance{margin-bottom:18px}
+.balance-label{color:var(--muted);font-size:12px}
+.balance-amount{color:#0b2740;font-weight:900;font-size:32px;margin-top:4px}
+
+.wallet-details{display:flex;flex-direction:column;gap:8px;padding-top:14px;border-top:1px solid rgba(10,30,50,0.06)}
+.detail-row{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+.detail-label{font-weight:700}
+.detail-value{color:#0b2740;font-weight:600}
+
+/* Add wallet card */
+.add-wallet{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, rgba(234,246,251,0.7) 0%, rgba(245,252,255,0.7) 100%);border:2px dashed rgba(11,59,90,0.2);text-decoration:none;cursor:pointer}
+.add-wallet:hover{background:linear-gradient(135deg, rgba(207,238,255,0.85) 0%, rgba(255,255,255,0.85) 100%);border-color:rgba(11,59,90,0.4)}
+
+.add-wallet-content{display:flex;flex-direction:column;align-items:center;text-align:center}
+.plus-icon{font-size:48px;font-weight:700;color:#0b3b5a;margin-bottom:8px}
+.add-label{font-weight:700;color:#0b2740;font-size:16px}
+.add-hint{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* Footer */
+.footer{text-align:center;padding:18px 12px;color:var(--muted);font-size:13px;margin-left:260px}
+
+/* Responsive */
+@media (max-width:980px){
+  .sidebar{position:static;margin:14px;width:auto;display:flex;flex-direction:row;align-items:center;gap:12px;padding:12px}
+  .main-content{margin-left:0;padding:24px}
+  .footer{margin-left:0}
+  .top-logo{position:static;margin:12px 0 0 auto;font-size:24px}
+}
+

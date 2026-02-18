@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velora — Transactions</title>
+  <link rel="stylesheet" href="../static/css/transactions.css" />
+  <meta name="description" content="Velora — Transactions" />
+</head>
+<body>
+  <div class="winter-bg" aria-hidden="true">
+    <div class="snow" aria-hidden="true">
+      <span class="flake" style="--left:3%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:10%; --d:9s; --s:8px"></span>
+      <span class="flake" style="--left:18%; --d:14s; --s:5px"></span>
+      <span class="flake" style="--left:26%; --d:11s; --s:7px"></span>
+      <span class="flake" style="--left:34%; --d:10s; --s:6px"></span>
+      <span class="flake" style="--left:42%; --d:13s; --s:9px"></span>
+      <span class="flake" style="--left:50%; --d:8s; --s:5px"></span>
+      <span class="flake" style="--left:58%; --d:15s; --s:8px"></span>
+      <span class="flake" style="--left:66%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:74%; --d:10s; --s:7px"></span>
+      <span class="flake" style="--left:82%; --d:13s; --s:5px"></span>
+      <span class="flake" style="--left:90%; --d:11s; --s:8px"></span>
+      <span class="flake" style="--left:96%; --d:14s; --s:6px"></span>
+    </div>
+  </div>
+
+  <!-- Top right logo -->
+  <div class="top-logo">Velora</div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img class="avatar-large" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=160" alt="User avatar" />
+      <div class="user-name"><strong>Alex</strong><br/><strong>Morgan</strong></div>
+      <div class="user-email muted">alex@example.com</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="/wallets">Wallets</a>
+      <a class="nav-item active" href="/transactions">Transactions</a>
+      <a class="nav-item" href="/subscriptions">Subscriptions</a>
+      <a class="nav-item" href="/transfer">Transfer</a>
+      <a class="nav-item" href="/profile">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Transactions</h1>
+      <p class="subtitle">View your transaction history</p>
+    </div>
+
+    <div class="transactions-container">
+      <div class="transactions-list">
+        <!-- Transaction 1 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Grocery Store</div>
+              <div class="tx-id">TXN-20250218-001</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">Alex Morgan</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Whole Foods</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount">- $72.50 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status completed">Completed</span>
+              <span class="tx-date">Feb 18, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction 2 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Monthly Salary</div>
+              <div class="tx-id">TXN-20250217-042</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">TechCorp Inc</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Alex Morgan</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount plus">+ $3,500.00 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status completed">Completed</span>
+              <span class="tx-date">Feb 17, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction 3 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Coffee Shop</div>
+              <div class="tx-id">TXN-20250216-018</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">Alex Morgan</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Brew Haven</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount">- $5.80 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status completed">Completed</span>
+              <span class="tx-date">Feb 16, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction 4 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Transfer to Jane</div>
+              <div class="tx-id">TXN-20250215-035</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">Alex Morgan</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Jane Smith</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount">- $200.00 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status pending">Pending</span>
+              <span class="tx-date">Feb 15, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction 5 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Netflix Subscription</div>
+              <div class="tx-id">TXN-20250214-022</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">Alex Morgan</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Netflix Inc</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount">- $15.99 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status completed">Completed</span>
+              <span class="tx-date">Feb 14, 2025</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction 6 -->
+        <div class="transaction-card">
+          <div class="tx-left">
+            <div class="tx-desc-section">
+              <div class="tx-description">Refund - Order Return</div>
+              <div class="tx-id">TXN-20250213-008</div>
+            </div>
+          </div>
+          <div class="tx-middle">
+            <div class="tx-row"><span class="tx-label">Sender:</span><span class="tx-value">Amazon</span></div>
+            <div class="tx-row"><span class="tx-label">Receiver:</span><span class="tx-value">Alex Morgan</span></div>
+          </div>
+          <div class="tx-right">
+            <div class="tx-amount plus">+ $45.00 USD</div>
+            <div class="tx-meta">
+              <span class="tx-status completed">Completed</span>
+              <span class="tx-date">Feb 13, 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© Velora — Simple finance, beautifully designed</footer>
+</body>
+</html>

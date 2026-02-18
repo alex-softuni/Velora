@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velora — Transfer</title>
+  <link rel="stylesheet" href="../static/css/transfer.css" />
+  <meta name="description" content="Velora — Transfer Money" />
+</head>
+<body>
+  <div class="winter-bg" aria-hidden="true">
+    <div class="snow" aria-hidden="true">
+      <span class="flake" style="--left:3%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:10%; --d:9s; --s:8px"></span>
+      <span class="flake" style="--left:18%; --d:14s; --s:5px"></span>
+      <span class="flake" style="--left:26%; --d:11s; --s:7px"></span>
+      <span class="flake" style="--left:34%; --d:10s; --s:6px"></span>
+      <span class="flake" style="--left:42%; --d:13s; --s:9px"></span>
+      <span class="flake" style="--left:50%; --d:8s; --s:5px"></span>
+      <span class="flake" style="--left:58%; --d:15s; --s:8px"></span>
+      <span class="flake" style="--left:66%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:74%; --d:10s; --s:7px"></span>
+      <span class="flake" style="--left:82%; --d:13s; --s:5px"></span>
+      <span class="flake" style="--left:90%; --d:11s; --s:8px"></span>
+      <span class="flake" style="--left:96%; --d:14s; --s:6px"></span>
+    </div>
+  </div>
+
+  <!-- Top right logo -->
+  <div class="top-logo">Velora</div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img class="avatar-large" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=160" alt="User avatar" />
+      <div class="user-name"><strong>Alex</strong><br/><strong>Morgan</strong></div>
+      <div class="user-email muted">alex@example.com</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="/wallets">Wallets</a>
+      <a class="nav-item" href="/transactions">Transactions</a>
+      <a class="nav-item" href="/subscriptions">Subscriptions</a>
+      <a class="nav-item active" href="/transfer">Transfer</a>
+      <a class="nav-item" href="/profile">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Send Money</h1>
+      <p class="subtitle">Transfer funds to a contact</p>
+    </div>
+
+    <div class="transfer-container">
+      <div class="transfer-card">
+        <form class="transfer-form" action="/transfer" method="post">
+          <!-- Recipient Section -->
+          <div class="form-section">
+            <h3 class="section-title">Recipient</h3>
+            <label class="form-field">
+              <span class="field-label">Recipient Name</span>
+              <input type="text" name="recipient" placeholder="Enter name or select from contacts" required />
+            </label>
+          </div>
+
+          <!-- Amount Section -->
+          <div class="form-section">
+            <h3 class="section-title">Amount</h3>
+            <div class="amount-row">
+              <label class="form-field flex-1">
+                <span class="field-label">Amount</span>
+                <input type="number" name="amount" placeholder="0.00" step="0.01" required />
+              </label>
+              <label class="form-field flex-2">
+                <span class="field-label">Currency</span>
+                <select name="currency" required>
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="CAD">CAD</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <!-- Description Section -->
+          <div class="form-section">
+            <h3 class="section-title">Details</h3>
+            <label class="form-field">
+              <span class="field-label">Description (Optional)</span>
+              <input type="text" name="description" placeholder="e.g., Lunch money, Rent payment" />
+            </label>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary large">Send Money</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Recent Transfers -->
+      <div class="recent-transfers">
+        <h3>Recent Transfers</h3>
+        <div class="transfer-list">
+          <div class="transfer-item">
+            <div class="transfer-header">
+              <div class="transfer-parties">
+                <span class="party from">You</span>
+                <span class="arrow">→</span>
+                <span class="party to">Jane Smith</span>
+              </div>
+              <div class="transfer-status completed">Completed</div>
+            </div>
+            <div class="transfer-details">
+              <div class="detail-row">
+                <span class="detail-label">Birthday Gift</span>
+                <span class="transfer-amount minus">-$50.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="transfer-item">
+            <div class="transfer-header">
+              <div class="transfer-parties">
+                <span class="party from">John Doe</span>
+                <span class="arrow">→</span>
+                <span class="party to">You</span>
+              </div>
+              <div class="transfer-status completed">Completed</div>
+            </div>
+            <div class="transfer-details">
+              <div class="detail-row">
+                <span class="detail-label">Lunch money</span>
+                <span class="transfer-amount plus">+$25.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="transfer-item">
+            <div class="transfer-header">
+              <div class="transfer-parties">
+                <span class="party from">You</span>
+                <span class="arrow">→</span>
+                <span class="party to">Sarah Wilson</span>
+              </div>
+              <div class="transfer-status pending">Pending</div>
+            </div>
+            <div class="transfer-details">
+              <div class="detail-row">
+                <span class="detail-label">Rent payment</span>
+                <span class="transfer-amount minus">-$1,200.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© Velora — Simple finance, beautifully designed</footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velora — Log in</title>
+  <link rel="stylesheet" href="../static/css/login.css" />
+  <meta name="description" content="Velora — Login" />
+</head>
+<body>
+  <div class="winter-bg" aria-hidden="true">
+    <div class="bg-overlay"></div>
+    <div class="snow">
+      <span class="flake" style="--left:8%; --d:10s; --s:9px"></span>
+      <span class="flake" style="--left:28%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:52%; --d:9s; --s:8px"></span>
+      <span class="flake" style="--left:76%; --d:13s; --s:7px"></span>
+    </div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand"><h1 class="logo">Velora</h1></div>
+    <nav class="top-actions">
+      <a class="btn btn-outline" href="/register">Register</a>
+    </nav>
+  </header>
+
+  <main class="auth-hero">
+    <div class="panel">
+      <h2 class="panel-title">Welcome back</h2>
+      <p class="panel-lead">Sign in to access your Velora account.</p>
+
+      <form class="auth-form" action="/login" method="post">
+        <label class="field">
+          <span class="label">Email</span>
+          <input name="email" type="email" required autocomplete="email" />
+        </label>
+
+        <label class="field">
+          <span class="label">Password</span>
+          <input name="password" type="password" required autocomplete="current-password" />
+        </label>
+
+        <div class="form-row">
+          <label class="remember"><input type="checkbox" name="remember" /> Remember me</label>
+        </div>
+
+        <div class="panel-cta">
+          <button class="btn btn-primary large" type="submit">Sign in</button>
+          <a class="btn btn-outline" href="/">Back</a>
+        </div>
+      </form>
+
+      <p class="small">Don't have an account? <a href="/register">Get started</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">© Velora — A simpler way to manage money</footer>
+</body>
+</html>
