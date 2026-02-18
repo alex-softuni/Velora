@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velora — Subscriptions</title>
+  <link rel="stylesheet" href="../static/css/subscriptions.css" />
+  <meta name="description" content="Velora — Subscriptions" />
+</head>
+<body>
+  <div class="winter-bg" aria-hidden="true">
+    <div class="snow" aria-hidden="true">
+      <span class="flake" style="--left:3%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:10%; --d:9s; --s:8px"></span>
+      <span class="flake" style="--left:18%; --d:14s; --s:5px"></span>
+      <span class="flake" style="--left:26%; --d:11s; --s:7px"></span>
+      <span class="flake" style="--left:34%; --d:10s; --s:6px"></span>
+      <span class="flake" style="--left:42%; --d:13s; --s:9px"></span>
+      <span class="flake" style="--left:50%; --d:8s; --s:5px"></span>
+      <span class="flake" style="--left:58%; --d:15s; --s:8px"></span>
+      <span class="flake" style="--left:66%; --d:12s; --s:6px"></span>
+      <span class="flake" style="--left:74%; --d:10s; --s:7px"></span>
+      <span class="flake" style="--left:82%; --d:13s; --s:5px"></span>
+      <span class="flake" style="--left:90%; --d:11s; --s:8px"></span>
+      <span class="flake" style="--left:96%; --d:14s; --s:6px"></span>
+    </div>
+  </div>
+
+  <!-- Top right logo -->
+  <div class="top-logo">Velora</div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-profile">
+      <img class="avatar-large" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=160" alt="User avatar" />
+      <div class="user-name"><strong>Alex</strong><br/><strong>Morgan</strong></div>
+      <div class="user-email muted">alex@example.com</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="nav-item" href="/wallets">Wallets</a>
+      <a class="nav-item" href="/transactions">Transactions</a>
+      <a class="nav-item active" href="/subscriptions">Subscriptions</a>
+      <a class="nav-item" href="/transfer">Transfer</a>
+      <a class="nav-item" href="/profile">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="page-header">
+      <h1>Subscriptions</h1>
+      <p class="subtitle">Choose your plan</p>
+    </div>
+
+    <div class="plans-grid">
+      <!-- FREE Plan -->
+      <div class="plan-card free">
+        <div class="plan-header">
+          <div class="plan-name">Free</div>
+          <div class="plan-badge">Basic</div>
+        </div>
+        <div class="plan-price">
+          <span class="currency">$</span><span class="amount">0</span>
+          <span class="period">/month</span>
+        </div>
+        <div class="plan-duration">No commitment required</div>
+        <button class="plan-btn current">Current Plan</button>
+        <div class="plan-features">
+          <div class="feature">✓ Basic wallet</div>
+          <div class="feature">✓ Single currency</div>
+          <div class="feature">✓ Transaction history</div>
+          <div class="feature">✗ Priority support</div>
+          <div class="feature">✗ Advanced analytics</div>
+        </div>
+      </div>
+
+      <!-- PREMIUM Plan -->
+      <div class="plan-card premium">
+        <div class="plan-header">
+          <div class="plan-name">Premium</div>
+          <div class="plan-badge popular">Most Popular</div>
+        </div>
+        <div class="plan-price">
+          <span class="currency">$</span><span class="amount">9.99</span>
+          <span class="period">/month</span>
+        </div>
+        <div class="plan-duration">Billed monthly</div>
+        <button class="plan-btn upgrade">Upgrade</button>
+        <div class="plan-features">
+          <div class="feature">✓ Multiple wallets</div>
+          <div class="feature">✓ Multi-currency support</div>
+          <div class="feature">✓ Transaction history</div>
+          <div class="feature">✓ Priority support</div>
+          <div class="feature">✓ Basic analytics</div>
+        </div>
+      </div>
+
+      <!-- ENTERPRISE Plan -->
+      <div class="plan-card enterprise">
+        <div class="plan-header">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-badge">Custom</div>
+        </div>
+        <div class="plan-price">
+          <span class="currency">$</span><span class="amount">99</span>
+          <span class="period">/month</span>
+        </div>
+        <div class="plan-duration">Annual billing available</div>
+        <button class="plan-btn contact">Contact Sales</button>
+        <div class="plan-features">
+          <div class="feature">✓ Unlimited wallets</div>
+          <div class="feature">✓ All currencies supported</div>
+          <div class="feature">✓ Full transaction history</div>
+          <div class="feature">✓ 24/7 dedicated support</div>
+          <div class="feature">✓ Advanced analytics & API</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">© Velora — Simple finance, beautifully designed</footer>
+</body>
+</html>

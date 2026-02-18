@@ -1,0 +1,46 @@
+:root{
+  --bg-img: url('https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600');
+  --glass: rgba(255,255,255,0.06);
+  --muted:#9fb3c9;
+  --white:#f7fbff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#041022 0%, #07243a 100%);color:var(--white)}
+
+.winter-bg{position:fixed;inset:0;z-index:-2;background-image:var(--bg-img);background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed}
+.winter-bg .bg-overlay{position:absolute;inset:0;background:linear-gradient(rgba(3,12,22,0.55), rgba(6,18,30,0.6));}
+.snow{position:absolute;inset:0;pointer-events:none}
+.flake{position:absolute;top:-6%;width:8px;height:8px;background:rgba(255,255,255,0.92);border-radius:50%;filter:blur(0.6px);opacity:0.95;animation:fall var(--d,12s) linear infinite;left:var(--left);transform:translateY(-10vh) scale(calc(var(--s,8px)/8px))}
+@keyframes fall{0%{transform:translateY(-10vh) translateX(0) scale(1);opacity:0}10%{opacity:0.9}100%{transform:translateY(110vh) translateX(20px) scale(1);opacity:0.95}}
+
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 28px}
+.logo{font-weight:800;font-size:36px;background:linear-gradient(180deg,#f3fbff 0%, #bfeeff 40%, #e6f7ff 60%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 6px 22px rgba(0,20,40,0.6);position:relative}
+.logo::after{content:'';position:absolute;left:8%;top:50%;width:80%;height:18%;background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0));transform:skewY(-10deg);mix-blend-mode:screen;filter:blur(0.9px);opacity:0.95;border-radius:2px}
+
+.top-actions .btn{margin-left:10px}
+
+.auth-hero{flex:1;display:flex;align-items:center;justify-content:center;padding:36px}
+.panel{width:100%;max-width:520px;background:var(--glass);border:1px solid rgba(255,255,255,0.06);padding:28px;border-radius:12px;backdrop-filter:blur(8px) saturate(120%);box-shadow:0 10px 40px rgba(2,8,20,0.6)}
+.panel-title{margin:0;font-size:22px;font-weight:700}
+.panel-lead{margin:10px 0 18px;color:var(--muted)}
+
+.auth-form{display:flex;flex-direction:column;gap:12px}
+.field{display:block}
+.label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
+input[type="email"],input[type="password"],input[type="text"]{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--white)}
+.form-row{display:flex;justify-content:space-between;align-items:center}
+.remember{color:var(--muted);font-size:13px}
+
+.panel-cta{display:flex;gap:12px;margin-top:8px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:transform .12s, box-shadow .12s}
+.btn-primary{background:linear-gradient(90deg,#7fd7ff,#7c9bff);color:#042026;border:0;box-shadow:none}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(124,158,255,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--white)}
+.btn.large{padding:12px 18px}
+.small{color:var(--muted);font-size:13px;margin-top:14px}
+
+.footer{text-align:center;padding:18px 12px;color:var(--muted);font-size:13px}
+
+@media (max-width:520px){.logo{font-size:28px}.panel{padding:18px}}

@@ -1,0 +1,75 @@
+:root{
+  --bg-1: #041022;
+  --bg-2: #07243a;
+  --accent: #7fd7ff;
+  --muted: #9fb3c9;
+  --glass: rgba(255,255,255,0.06);
+  --white: #f7fbff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color:var(--white);
+  background: linear-gradient(180deg,var(--bg-1) 0%, var(--bg-2) 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Fullscreen winter background */
+.winter-bg{position:fixed;inset:0;z-index:-2;overflow:hidden;background-image:url('https://images.pexels.com/photos/714258/pexels-photo-714258.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=1600');background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed}
+.winter-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(3,12,22,0.48), rgba(6,18,30,0.6));mix-blend-mode:multiply}
+.winter-bg .bg-glow{position:absolute;inset:-20%;background:radial-gradient(circle at 30% 20%, rgba(127,215,255,0.06), transparent 8%), radial-gradient(circle at 80% 80%, rgba(124,58,237,0.04), transparent 12%);filter:blur(30px)}
+
+/* Snowflakes */
+.snow{position:absolute;inset:0;pointer-events:none}
+.flake{position:absolute;top:-10%;left:50%;width:8px;height:8px;background:rgba(255,255,255,0.92);border-radius:50%;filter:blur(0.6px);opacity:0.95;animation:fall var(--d,12s) linear infinite;transform:translateY(-10vh) scale(calc(var(--s,8px) / 8px));left:var(--left)}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh) translateX(0) scale(var(--scale,1));opacity:0}
+  10%{opacity:0.9}
+  100%{transform:translateY(110vh) translateX(30px) scale(var(--scale,1));opacity:0.95}
+}
+
+/* Top bar */
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 28px}
+.logo{font-weight:800;font-size:40px;line-height:1;letter-spacing:0.6px;margin:0}
+
+/* Frosty logo effect */
+.logo{
+  background:linear-gradient(180deg,#f3fbff 0%, #bfeeff 40%, #e6f7ff 60%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.45), 0 8px 30px rgba(0,20,40,0.6);
+  position:relative;
+}
+.logo::after{
+  content:'';position:absolute;left:8%;top:45%;width:80%;height:22%;background:linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0));transform:skewY(-12deg);mix-blend-mode:screen;filter:blur(1px);opacity:0.95;border-radius:2px}
+
+/* Panel */
+.hero{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+.panel{max-width:740px;background:var(--glass);border:1px solid rgba(255,255,255,0.06);padding:36px;border-radius:14px;backdrop-filter: blur(8px) saturate(120%);box-shadow: 0 10px 40px rgba(2,8,20,0.6)}
+.panel-title{margin:0;font-size:28px;color:var(--white);font-weight:700}
+.panel-lead{color:var(--muted);margin-top:10px;margin-bottom:18px;line-height:1.5}
+
+.panel-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;transition:transform .15s ease,box-shadow .15s ease}
+.btn-primary{background:linear-gradient(90deg,#7fd7ff,#7c9bff);color:#042026;box-shadow:0 8px 30px rgba(124,58,237,0.12)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--white)}
+.btn.large{padding:12px 18px;border-radius:12px}
+.btn:hover{transform:translateY(-2px)}
+
+.top-actions .btn{margin-left:10px}
+
+.footer{text-align:center;padding:24px 12px;color:var(--muted);font-size:13px}
+
+/* Responsive */
+@media (max-width:720px){
+  .logo{font-size:32px}
+  .panel{padding:22px}
+  .panel-title{font-size:22px}
+}
