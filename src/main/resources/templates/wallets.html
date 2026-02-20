@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Velora — Wallets</title>
-  <link rel="stylesheet" href="../static/css/wallets.css" />
+  <link rel="stylesheet" href="/css/wallets.css" th:href="@{/css/wallets.css}" />
   <meta name="description" content="Velora — Wallets" />
 </head>
 <body>
@@ -38,11 +38,11 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="nav-item active" href="/wallets">Wallets</a>
-      <a class="nav-item" href="/transactions">Transactions</a>
-      <a class="nav-item" href="/subscriptions">Subscriptions</a>
-      <a class="nav-item" href="/transfer">Transfer</a>
-      <a class="nav-item" href="/profile">Profile</a>
+      <a class="nav-item active" href="/wallets" th:href="@{/wallets}">Wallets</a>
+      <a class="nav-item" href="/transactions" th:href="@{/transactions}">Transactions</a>
+      <a class="nav-item" href="/subscriptions" th:href="@{/subscriptions}">Subscriptions</a>
+      <a class="nav-item" href="/transfer" th:href="@{/transfer}">Transfer</a>
+      <a class="nav-item" href="/profile" th:href="@{/profile}">Profile</a>
     </nav>
   </aside>
 
@@ -76,7 +76,7 @@
       </div>
 
       <!-- Add wallet card -->
-      <a href="/add-wallet" class="wallet-card add-wallet">
+      <a href="/add-wallet" th:href="@{/add-wallet}" class="wallet-card add-wallet">
         <div class="add-wallet-content">
           <div class="plus-icon">+</div>
           <div class="add-label">Add Wallet</div>

@@ -1,27 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Velora — Register</title>
-  <link rel="stylesheet" href="../static/css/register.css" />
+  <link rel="stylesheet" href="/css/register.css" th:href="@{/css/register.css}" />
   <meta name="description" content="Velora — Register" />
 </head>
 <body>
   <div class="winter-bg" aria-hidden="true">
     <div class="bg-overlay"></div>
     <div class="snow">
-      <span class="flake" style="--left:6%; --d:11s; --s:9px"></span>
-      <span class="flake" style="--left:24%; --d:13s; --s:6px"></span>
-      <span class="flake" style="--left:46%; --d:9s; --s:8px"></span>
-      <span class="flake" style="--left:68%; --d:14s; --s:7px"></span>
+      <span class="flake" style="--left:6%; --d:11s; --size:9px"></span>
+      <span class="flake" style="--left:24%; --d:13s; --size:6px"></span>
+      <span class="flake" style="--left:46%; --d:9s; --size:8px"></span>
+      <span class="flake" style="--left:68%; --d:14s; --size:7px"></span>
     </div>
   </div>
 
   <header class="topbar">
     <div class="brand"><h1 class="logo">Velora</h1></div>
     <nav class="top-actions">
-      <a class="btn btn-outline" href="/login">Log in</a>
+      <a class="btn btn-outline" th:href="@{/auth/login}">Log in</a>
     </nav>
   </header>
 
@@ -30,7 +30,7 @@
       <h2 class="panel-title">Create your account</h2>
       <p class="panel-lead">Join Velora to start managing your money with clarity.</p>
 
-      <form class="auth-form" action="/register" method="post">
+      <form class="auth-form" action="/register" th:action="@{/auth/register}" method="post">
         <label class="field"><span class="label">Username</span><input name="username" type="text" required autocomplete="username" /></label>
         <label class="field"><span class="label">Email</span><input name="email" type="email" required /></label>
         <label class="field"><span class="label">Password</span><input name="password" type="password" required /></label>
@@ -38,11 +38,11 @@
 
         <div class="panel-cta">
           <button class="btn btn-primary large" type="submit">Create account</button>
-          <a class="btn btn-outline" href="/">Back</a>
+          <a class="btn btn-outline" th:href="@{/}">Back</a>
         </div>
       </form>
 
-      <p class="small">Already have an account? <a href="/login">Sign in</a></p>
+      <p class="small">Already have an account? <a th:href="@{/auth/login}">Sign in</a></p>
     </div>
   </main>
 

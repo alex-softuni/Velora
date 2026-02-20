@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Velora — Transfer</title>
-  <link rel="stylesheet" href="../static/css/transfer.css" />
+  <link rel="stylesheet" href="/css/transfer.css" th:href="@{/css/transfer.css}" />
   <meta name="description" content="Velora — Transfer Money" />
 </head>
 <body>
@@ -38,11 +38,11 @@
     </div>
 
     <nav class="sidebar-nav">
-      <a class="nav-item" href="/wallets">Wallets</a>
-      <a class="nav-item" href="/transactions">Transactions</a>
-      <a class="nav-item" href="/subscriptions">Subscriptions</a>
-      <a class="nav-item active" href="/transfer">Transfer</a>
-      <a class="nav-item" href="/profile">Profile</a>
+      <a class="nav-item" href="/wallets" th:href="@{/wallets}">Wallets</a>
+      <a class="nav-item" href="/transactions" th:href="@{/transactions}">Transactions</a>
+      <a class="nav-item" href="/subscriptions" th:href="@{/subscriptions}">Subscriptions</a>
+      <a class="nav-item active" href="/transfer" th:href="@{/transfer}">Transfer</a>
+      <a class="nav-item" href="/profile" th:href="@{/profile}">Profile</a>
     </nav>
   </aside>
 
@@ -54,7 +54,7 @@
 
     <div class="transfer-container">
       <div class="transfer-card">
-        <form class="transfer-form" action="/transfer" method="post">
+        <form class="transfer-form" action="/transfer" th:action="@{/transfer}" method="post">
           <!-- Recipient Section -->
           <div class="form-section">
             <h3 class="section-title">Recipient</h3>

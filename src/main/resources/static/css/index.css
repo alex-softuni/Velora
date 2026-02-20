@@ -28,7 +28,7 @@ body{
 
 /* Snowflakes */
 .snow{position:absolute;inset:0;pointer-events:none}
-.flake{position:absolute;top:-10%;left:50%;width:8px;height:8px;background:rgba(255,255,255,0.92);border-radius:50%;filter:blur(0.6px);opacity:0.95;animation:fall var(--d,12s) linear infinite;transform:translateY(-10vh) scale(calc(var(--s,8px) / 8px));left:var(--left)}
+.flake{--size:8px;--scale:1;position:absolute;top:-10%;left:50%;width:var(--size,8px);height:var(--size,8px);background:rgba(255,255,255,0.92);border-radius:50%;filter:blur(0.6px);opacity:0.95;animation:fall var(--d,12s) linear infinite;transform:translateY(-10vh) scale(var(--scale,1));left:var(--left)}
 
 @keyframes fall{
   0%{transform:translateY(-10vh) translateX(0) scale(var(--scale,1));opacity:0}
