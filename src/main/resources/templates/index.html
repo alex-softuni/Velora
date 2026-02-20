@@ -1,55 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Velora — Simple finance app</title>
-  <link rel="stylesheet" href="../static/css/index.css" />
-  <meta name="description" content="Velora — A simple finance app" />
- </head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Velora — Simple finance app</title>
+    <link rel="stylesheet" href="/css/index.css" th:href="@{/css/index.css}"/>
+    <meta name="description" content="Velora — A simple finance app"/>
+</head>
 <body>
-  <div class="winter-bg" aria-hidden="true">
+<div class="winter-bg" aria-hidden="true">
     <div class="bg-glow"></div>
     <div class="snow">
-      <span class="flake" style="--left:3%; --d:10s; --s:10px"></span>
-      <span class="flake" style="--left:9%; --d:12s; --s:6px"></span>
-      <span class="flake" style="--left:16%; --d:9s; --s:8px"></span>
-      <span class="flake" style="--left:25%; --d:14s; --s:5px"></span>
-      <span class="flake" style="--left:33%; --d:11s; --s:9px"></span>
-      <span class="flake" style="--left:40%; --d:8s; --s:7px"></span>
-      <span class="flake" style="--left:48%; --d:13s; --s:6px"></span>
-      <span class="flake" style="--left:55%; --d:10.5s; --s:11px"></span>
-      <span class="flake" style="--left:62%; --d:9.5s; --s:6px"></span>
-      <span class="flake" style="--left:70%; --d:12.5s; --s:8px"></span>
-      <span class="flake" style="--left:78%; --d:11.2s; --s:5px"></span>
-      <span class="flake" style="--left:85%; --d:14s; --s:9px"></span>
-      <span class="flake" style="--left:92%; --d:10s; --s:7px"></span>
-      <span class="flake" style="--left:96%; --d:13.5s; --s:6px"></span>
+        <span class="flake" style="--left:3%; --d:10s; --size:10px"></span>
+        <span class="flake" style="--left:9%; --d:12s; --size:6px"></span>
+        <span class="flake" style="--left:16%; --d:9s; --size:8px"></span>
+        <span class="flake" style="--left:25%; --d:14s; --size:5px"></span>
+        <span class="flake" style="--left:33%; --d:11s; --size:9px"></span>
+        <span class="flake" style="--left:40%; --d:8s; --size:7px"></span>
+        <span class="flake" style="--left:48%; --d:13s; --size:6px"></span>
+        <span class="flake" style="--left:55%; --d:10.5s; --size:11px"></span>
+        <span class="flake" style="--left:62%; --d:9.5s; --size:6px"></span>
+        <span class="flake" style="--left:70%; --d:12.5s; --size:8px"></span>
+        <span class="flake" style="--left:78%; --d:11.2s; --size:5px"></span>
+        <span class="flake" style="--left:85%; --d:14s; --size:9px"></span>
+        <span class="flake" style="--left:92%; --d:10s; --size:7px"></span>
+        <span class="flake" style="--left:96%; --d:13.5s; --size:6px"></span>
     </div>
-  </div>
+</div>
 
-  <header class="topbar">
+<header class="topbar">
     <div class="brand">
-      <h1 class="logo">Velora</h1>
+        <h1 class="logo">Velora</h1>
     </div>
     <nav class="top-actions">
-      <a class="btn btn-outline" href="/login">Log in</a>
-      <a class="btn btn-primary" href="/register">Get started</a>
+        <a class="btn btn-outline" th:href="@{/auth/login}">Log in</a>
+        <a class="btn btn-primary" th:href="@{/auth/register}">Get started</a>
     </nav>
-  </header>
+</header>
 
-  <main class="hero">
+<main class="hero">
     <div class="panel">
-      <h2 class="panel-title">Smarter money, simpler tools</h2>
-      <p class="panel-lead">Velora helps you manage your money with clean insights and intuitive transfers — lightweight and secure.</p>
+        <h2 class="panel-title">Smarter money, simpler tools</h2>
+        <p class="panel-lead">Velora helps you manage your money with clean insights and intuitive transfers —
+            lightweight and secure.</p>
 
-      <div class="panel-cta">
-        <a class="btn btn-primary large" href="/register">Create account</a>
-        <a class="btn btn-outline large" href="/login">Sign in</a>
-      </div>
+        <div class="panel-cta">
+            <a class="btn btn-primary large" th:href="@{/auth/register}">Create account</a>
+            <a class="btn btn-outline large" th:href="@{/auth/login}">Sign in</a>
+        </div>
     </div>
-  </main>
+</main>
 
-  <footer class="footer">© Velora — A simpler way to manage money</footer>
+<footer class="footer">© Velora — A simpler way to manage money</footer>
 </body>
 </html>
